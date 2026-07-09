@@ -32,9 +32,10 @@ jobs:
     runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id
     strategy:
+      fail-fast: false
       matrix:
-        VERSION: ['25.12', '24.10']
-        SET: [docker, non-docker]
+        VERSION: ['25.12']
+        SET: [docker]
 
     steps:
     - name: Checkout
