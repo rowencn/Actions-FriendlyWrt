@@ -1,8 +1,14 @@
 name: Build FriendlyWrt
-
 on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+
   watch:
-    types: started
+    types:
+      - started
 jobs:
   prepare_release:
     runs-on: ubuntu-22.04
