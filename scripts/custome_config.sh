@@ -31,11 +31,10 @@ fi
 echo ">>> Disable SDK, ImageBuilder and Toolchain"
 
 sed -i \
-    -e '/^CONFIG_MAKE_TOOLCHAIN=y$/d' \
     -e 's/^CONFIG_IB=y$/# CONFIG_IB is not set/' \
     -e 's/^CONFIG_SDK=y$/# CONFIG_SDK is not set/' \
     "${CONFIG_FILE}"
-
+echo "CONFIG_MAKE_TOOLCHAIN=y" >> "${CONFIG_FILE}"
 # --------------------------------------------------
 # Git 克隆重试函数
 # --------------------------------------------------
